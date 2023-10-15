@@ -159,7 +159,16 @@ fifnv() {
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions forgit enhancd zsh-syntax-highlighting)
+plugins=(\
+  git\
+  zsh-autosuggestions\
+  forgit\
+  enhancd\
+  zsh-syntax-highlighting\
+  copyfile\
+  dirhistory\
+  colored-man-pages\
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -238,7 +247,7 @@ alias gclean="git remote prune"
 alias grst="git restore --staged"
 alias grsta="git restore --staged *"
 alias glp="git log -p --"
-alias glpb=git log --"
+alias glpb="git log --"
 
 
 gdfb(){
@@ -438,6 +447,17 @@ helpme() {
 
   echo -e "** ${txtblubold}occupy${txtresbold} -> size of directory and sub-directory"
 
+  echo -e "** Ctrl+O copies the text to the clipboard"
+  echo -e "** Alt+Left takes you into the previous directory you were in"
+  echo -e "** Alt+Right reverts that (moves you forward)"
+  echo -e "** Alt+up puts you in the parent directory"
+  echo -e "** "
+  echo -e "** "
+  echo -e "** "
+  echo -e "** "
+  echo -e "** "
+
+
 }
 
 helpmegit() {
@@ -489,7 +509,7 @@ helpmegit() {
 
 }
 
-helmetmux() {
+helpmetmux() {
 
   echo -e "${txtredbold}HELP ME TMUX!!!${txtresbold}\n"
 
@@ -519,6 +539,8 @@ helmetmux() {
     echo -e "* l → sposta la pagina verso dx"
     echo -e "* h → sposta la pagina verso sx"
 }
+
+pokemon-colorscripts -r -b --no-title
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
