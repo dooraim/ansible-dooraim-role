@@ -221,3 +221,22 @@
     state: absent
   become: yes
   become_user: '{{ username }}'
+
+- name: Clone pokemon-colorscripts Git repository
+  git:
+    repo: https://gitlab.com/phoneybadger/pokemon-colorscripts.git
+    dest: ~{{ username }}/pokemon-colorscripts
+    version: main
+  become_user: '{{ username }}'
+
+- name: Run the install script pokemon-colorscripts
+  command: ./install.sh
+  args:
+    chdir: ~{{ username }}/pokemon-colorscripts
+  become: yes
+
+- name: Remove the pokemon-colorscripts directory
+  file:
+    path: ~{{ username }}/pokemon-colorscripts
+    state: absent
+  become_user: '{{ username }}'
