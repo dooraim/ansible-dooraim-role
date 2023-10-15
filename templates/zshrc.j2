@@ -540,6 +540,26 @@ helpmetmux() {
     echo -e "* h → sposta la pagina verso sx"
 }
 
+
+helpmeneovim() {
+  
+
+  echo -e "${txtredbold}HELP ME NEOVIM!!!${txtresbold}\n"
+
+
+  echo -e "* ${txtgrnbold}move cursor${txtresbold}\n"
+
+  echo -e "* start:       ${txtblubold}<C-n>${txtresbold} icursor and add a virtual cursor + selection on the match"
+  echo -e "* next:        ${txtblubold}<C-n>${txtresbold}  add a new virtual cursor + selection on the next match"
+  echo -e "* skip:        ${txtblubold}<C-x>${txtresbold}  skip the next match"
+  echo -e "* prev:        ${txtblubold}<C-p>${txtresbold}  remove current virtual cursor + selection and go back on previous match"
+  echo -e "* select all:  ${txtblubold}<A-n>${txtresbold}  start multicursor and directly select all matches"
+
+  echo -e "* ${txtgrnbold}Utility${txtresbold}\n"
+  
+
+  echo -e "* ${txtblubold}v${txtresbold}:  start selection cursor\n"
+}
 pokemon-colorscripts -r -b --no-title
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
