@@ -209,7 +209,7 @@
 
 - name: Clone LazyVim starter
   git:
-    repo: https://github.com/LazyVim/starter
+    repo: https://github.com/dooraim/starter.git
     dest: ~{{ username }}/.config/nvim
     update: yes
   become: yes
