@@ -199,10 +199,22 @@
     mode: '0755'
     force: 'yes'
 
-- name: copy nvim configuration
+- name: Install NEOVIM - >=O.9
+  community.general.snap:
+    name: nvim
+    classic: yes
+
+- name: Clone LazyVim starter
+  git:
+    repo: https://github.com/LazyVim/starter
+    dest: ~{{ username }}/.config/nvim
+    update: yes
   become: yes
-  become_user: "{{ username }}"
-  copy:
-    src: "nvim/"
-    dest: "~{{ username }}/.config/nvim"
-    mode: '0644'
+  become_user: '{{ username }}'
+
+- name: Remove .git directory from ~/.config/nvim
+  file:
+    path: ~{{ username }}/.config/nvim/.git
+    state: absent
+  become: yes
+  become_user: '{{ username }}'
