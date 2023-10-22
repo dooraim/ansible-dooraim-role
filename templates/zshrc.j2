@@ -549,7 +549,7 @@ helpmeneovim() {
 
   echo -e "* ${txtgrnbold}move cursor${txtresbold}\n"
 
-  echo -e "* start:       ${txtblubold}<C-n>${txtresbold} icursor and add a virtual cursor + selection on the match"
+  echo -e "* start:       ${txtblubold}<C-n>${txtresbold}  cursor and add a virtual cursor + selection on the match"
   echo -e "* next:        ${txtblubold}<C-n>${txtresbold}  add a new virtual cursor + selection on the next match"
   echo -e "* skip:        ${txtblubold}<C-x>${txtresbold}  skip the next match"
   echo -e "* prev:        ${txtblubold}<C-p>${txtresbold}  remove current virtual cursor + selection and go back on previous match"
@@ -558,7 +558,11 @@ helpmeneovim() {
   echo -e "* ${txtgrnbold}Utility${txtresbold}\n"
   
 
-  echo -e "* ${txtblubold}v${txtresbold}:  start selection cursor\n"
+  echo -e "* ${txtblubold}v${txtresbold}:  start selection row\n"
+  echo -e "* ${txtblubold}<C-n> + x${txtresbold}  cut selected word\n"
+  echo -e "* ${txtblubold}<C-n> + w + arrow${txtresbold}  select more word\n"
+
+
 }
 pokemon-colorscripts -r -b --no-title
 
