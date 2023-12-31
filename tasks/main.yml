@@ -196,13 +196,6 @@
     version: master
     dest: '~{{ username }}/embedded-qemu-labs/toolchain/'
 
-- name: Download Installer cht.sh
-  get_url:
-    url: https://cht.sh/cht.sh
-    dest: /bin/cht.sh
-    mode: '0755'
-    force: 'yes'
-
 - name: Install NEOVIM - >=O.9
   community.general.snap:
     name: nvim
