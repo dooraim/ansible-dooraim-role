@@ -554,14 +554,32 @@ helpmeneovim() {
   echo -e "* skip:        ${txtblubold}<C-x>${txtresbold}  skip the next match"
   echo -e "* prev:        ${txtblubold}<C-p>${txtresbold}  remove current virtual cursor + selection and go back on previous match"
   echo -e "* select all:  ${txtblubold}<A-n>${txtresbold}  start multicursor and directly select all matches"
+  echo -e "* ${txtblubold}w${txtblubold} - move forward to the next word. A word - by default - is a sequence containing letters, digits, or underscores."
+  echo -e "* ${txtblubold}b${txtblubold} - move `b`ack your cursor to the previous word"
+  echo -e "* ${txtblubold}0${txtblubold} - move to the beginning of the current line."
+  echo -e "* ${txtblubold}ˆ /${txtblubold} - move to the first non-blank character on the current line."
+  echo -e "* ${txtblubold}$ /${txtblubold} - move to the end of the current line."
+  echo -e "* ${txtblubold}% /${txtblubold} - move to the matching bracket when the cursor is already on a bracket."
+  echo -e "* ${txtblubold}f<character>${txtblubold} - find a character after your cursor."
+  echo -e "* ${txtblubold}F<character>${txtblubold} - find a character before your cursor."
+  echo -e "* ${txtblubold}t<character>${txtblubold} - move to a character after your cursor."
+  echo -e "* ${txtblubold}T<character>${txtblubold} - move to a character before your cursor."
 
-  echo -e "* ${txtgrnbold}Utility${txtresbold}\n"
+  echo -e "\n* ${txtblubold}<C-v><C-n>${txtblubold} ${txtpurbold}select block and add cursor for all row${txtresbold}"
+  echo -e "\n* ${txtblubold}<v><select word with arrow key><y>${txtblubold} ${txtpurbold}select a word and copy${txtresbold}"
+  echo -e "\n* ${txtblubold}<Space></><word to search>${txtblubold} ${txtpurbold}search a word in all root directories${txtresbold}"
+  echo -e "\n* ${txtblubold}<Space><Space><file to search>${txtblubold} ${txtpurbold}search a file in all root directories${txtresbold}"
+
+  echo -e "\n* ${txtgrnbold}Utility${txtresbold}\n"
   
-
   echo -e "* ${txtblubold}v${txtresbold}:  start selection row\n"
   echo -e "* ${txtblubold}<C-n> + x${txtresbold}  cut selected word\n"
   echo -e "* ${txtblubold}<C-n> + w + arrow${txtresbold}  select more word\n"
 
+  echo -e "\n** ${txtgrnbold}Find Utility${txtresbold}\n"
+
+  echo -e "* ${txtblubold}n${txtresbold}:  next occurrence\n"
+  echo -e "* ${txtblubold}N${txtresbold}:  previous occurrence\n"
 
 }
 pokemon-colorscripts -r -b --no-title
