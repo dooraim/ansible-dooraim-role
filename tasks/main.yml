@@ -70,6 +70,7 @@
       - fzy
       - fd-find
       - ripgrep
+      - cppcheck
     autoclean: yes
 
 - name: install python packages
