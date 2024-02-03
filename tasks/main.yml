@@ -83,12 +83,6 @@
       - python3-pip
     autoclean: yes
 
-- name: Install virtualenv
-  pip:
-    name: virtualenv
-    state: latest
-    executable: pip3
-
 - name: clone oh-my-zsh for user
   tags:
     # Suppress warning: [ANSIBLE0006] git used in place of git module
@@ -179,22 +173,6 @@
     dest: "~{{ username }}/.tmux.conf"
     backup: yes
     mode: "u=rw,go=r"
-
-- name: clone embedded-qemu-labs
-  become: yes
-  become_user: '{{ username }}'
-  git:
-    repo: 'git@github.com:dooraim/embedded-qemu-labs.git'
-    version: master
-    dest: '~{{ username }}/git@github.com:dooraim/embedded-qemu-labs.git'
-
-- name: clone crosstool-ng
-  become: yes
-  become_user: '{{ username }}'
-  git:
-    repo: 'https://github.com/crosstool-ng/crosstool-ng'
-    version: master
-    dest: '~{{ username }}/embedded-qemu-labs/toolchain/'
 
 - name: Install NEOVIM - >=O.9
   community.general.snap:
