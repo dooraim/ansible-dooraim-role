@@ -71,6 +71,7 @@
       - fd-find
       - ripgrep
       - cppcheck
+      - snap
     autoclean: yes
 
 - name: install python packages
