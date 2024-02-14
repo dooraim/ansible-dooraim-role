@@ -305,6 +305,26 @@ alias fcb="forgit::checkout::branch"
 alias fclean="forgit::clean"
 alias fss="forgit::stash::show"
 alias fb="forgit::blame"
+alias fct=forgit::checkout::tag
+alias ferr=forgit::error
+alias fil=forgit::ignore::list
+alias frc=forgit::revert::commit
+alias fbd=forgit::branch::delete
+alias fcp=forgit::cherry::pick
+alias ffixup=forgit::fixup
+alias fiu=forgit::ignore::update
+alias fsp=forgit::stash::push
+alias fcpfb=forgit::cherry::pick::from::branch
+alias fi=forgit::ignore
+alias fcc=forgit::checkout::commit
+alias fic=forgit::ignore::clean
+alias fr=forgit::rebase
+alias fw=forgit::warn
+alias fa=forgit::add
+alias fcf=forgit::checkout::file
+alias fdiff=forgit::diff
+alias fig=forgit::ignore::get
+alias frh=forgit::reset::head
 
 #-------------------------------------------------------------
 # Command Directory
@@ -381,7 +401,7 @@ alias csh='curl cheat.sh/'
 cheat(){
   if [ "$1" ]; then
     curl cheat.sh/$1 | less
-  else 
+  else
     echo -e "Error\ncheat python\ncheat python/:learn\ncheat python/:list"
   fi
 }
@@ -456,8 +476,6 @@ helpme() {
   echo -e "** "
   echo -e "** "
   echo -e "** "
-
-
 }
 
 helpmegit() {
@@ -542,7 +560,6 @@ helpmetmux() {
 
 
 helpmeneovim() {
-  
 
   echo -e "${txtredbold}HELP ME NEOVIM!!!${txtresbold}\n"
 
@@ -571,7 +588,7 @@ helpmeneovim() {
   echo -e "\n* ${txtblubold}<Space><Space><file to search>${txtblubold} ${txtpurbold}search a file in all root directories${txtresbold}"
 
   echo -e "\n* ${txtgrnbold}Utility${txtresbold}\n"
-  
+
   echo -e "* ${txtblubold}v${txtresbold}:  start selection row\n"
   echo -e "* ${txtblubold}<C-n> + x${txtresbold}  cut selected word\n"
   echo -e "* ${txtblubold}<C-n> + w + arrow${txtresbold}  select more word\n"
@@ -586,3 +603,5 @@ pokemon-colorscripts -r
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
