@@ -277,11 +277,10 @@ alias gln='logging'
 
 logging(){
   if [ "$1" ]; then
-    git log --pretty=format:'%Cred%h%Creset %Cgreen(%cr)%Creset %C(yellow)%an%Creset %s' -n $1 --color=always | nl | less -r
+    git log --pretty=format:'%Cred%h%Creset %Cgreen(%cr)%Creset %C(yellow)%an%Creset %s %C(bold magenta)%D%Creset' -n $1 --color=always  | nl | less -r
   else
-    git log --pretty=format:'%Cred%h%Creset %Cgreen(%cr)%Creset %C(yellow)%an%Creset %s' --color=always | nl | less -r
+    git log --pretty=format:'%Cred%h%Creset %Cgreen(%cr)%Creset %C(yellow)%an%Creset %s %C(bold magenta)%D%Creset' --color=always  | nl | less -r
   fi
-
 }
 
 view_diff(){
