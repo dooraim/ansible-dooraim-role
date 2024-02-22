@@ -295,6 +295,17 @@ batdiff() {
   git diff --name-only --relative --diff-filter=d | xargs batcat
 }
 
+rm_process() {
+    if [ "$1" ]; then
+        pgrep -u $1 -f $2 | xargs kill -9
+    else
+        echo "kp <user name> <app>"
+        echo "example: kp pippo code"
+    fi
+}
+
+alias kp='rm_process'
+
 #-------------------------------------------------------------
 # FORGIT
 #-------------------------------------------------------------
