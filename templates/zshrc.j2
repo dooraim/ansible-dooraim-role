@@ -277,11 +277,10 @@ alias gln='logging'
 
 logging(){
   if [ "$1" ]; then
-    git log --pretty=format:'%Cred%h%Creset %Cgreen(%cr)%Creset %C(yellow)%an%Creset %s' -n $1 --color=always | nl | less -r
+    git log --pretty=format:'%Cred%h%Creset %Cgreen(%cr)%Creset %C(yellow)%an%Creset %s %C(bold magenta)%D%Creset' -n $1 --color=always  | nl | less -r
   else
-    git log --pretty=format:'%Cred%h%Creset %Cgreen(%cr)%Creset %C(yellow)%an%Creset %s' --color=always | nl | less -r
+    git log --pretty=format:'%Cred%h%Creset %Cgreen(%cr)%Creset %C(yellow)%an%Creset %s %C(bold magenta)%D%Creset' --color=always  | nl | less -r
   fi
-
 }
 
 view_diff(){
@@ -295,6 +294,17 @@ view_diff(){
 batdiff() {
   git diff --name-only --relative --diff-filter=d | xargs batcat
 }
+
+rm_process() {
+    if [ "$1" ]; then
+        pgrep -u $1 -f $2 | xargs kill -9
+    else
+        echo "kp <user name> <app>"
+        echo "example: kp pippo code"
+    fi
+}
+
+alias kp='rm_process'
 
 #-------------------------------------------------------------
 # FORGIT
@@ -361,7 +371,6 @@ alias tn='tmux new -s'
 # Bash
 #-------------------------------------------------------------
 alias bc='batcat'
-alias cp='rsync --progress -avz --ignore-existing'
 alias tree='tree -C --dirsfirst'
 # This renames all files in the current directory containing a specific string with another string
 alias rename='function _rename() { for i in *$1*; do mv "$i" "${i/$1/$2}"; done }; _rename'
@@ -582,7 +591,7 @@ helpmeneovim() {
   echo -e "* ${txtblubold}N${txtresbold}:  previous occurrence\n"
 
 }
-pokemon-colorscripts -r
+pokemon-colorscripts -r 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
