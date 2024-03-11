@@ -276,10 +276,12 @@ alias gupdate="git add . && git commit -m "update" && git push"
 alias gln='logging'
 
 logging(){
-  if [ "$1" ]; then
-    git log --pretty=format:'%Cred%h%Creset %Cgreen(%cr)%Creset %C(yellow)%an%Creset %s %C(bold magenta)%D%Creset' -n $1 --color=always  | nl | less -r
+  if [ "$2" ]; then
+    git log --pretty=format:'%Cred%h%Creset %Cgreen(%cr)%Creset %C(yellow)%an%Creset %s %C(bold magenta)%D%Creset' -n $2 --color=always $1 | nl | less -r
+  elif [ "$1" ]; then
+    git log --pretty=format:'%Cred%h%Creset %Cgreen(%cr)%Creset %C(yellow)%an%Creset %s %C(bold magenta)%D%Creset' --color=always $1 | nl | less -r
   else
-    git log --pretty=format:'%Cred%h%Creset %Cgreen(%cr)%Creset %C(yellow)%an%Creset %s %C(bold magenta)%D%Creset' --color=always  | nl | less -r
+    git log --pretty=format:'%Cred%h%Creset %Cgreen(%cr)%Creset %C(yellow)%an%Creset %s %C(bold magenta)%D%Creset' --color=always | nl | less -r
   fi
 }
 
