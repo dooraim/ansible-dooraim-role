@@ -391,7 +391,6 @@ alias tn='tmux new -s'
 # Bash
 #-------------------------------------------------------------
 alias bc='batcat'
-alias cp='rsync --progress -avz --ignore-existing'
 alias tree='tree -C --dirsfirst'
 # This renames all files in the current directory containing a specific string with another string
 alias rename='function _rename() { for i in *$1*; do mv "$i" "${i/$1/$2}"; done }; _rename'
@@ -609,7 +608,7 @@ helpmeneovim() {
   echo -e "* ${txtblubold}N${txtresbold}:  previous occurrence\n"
 
 }
-pokemon-colorscripts -r
+pokemon-colorscripts -r 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
