@@ -47,6 +47,15 @@
       - gparted
       - samba
       - samba-common-bin
+      - build-essential
+      - libncurses-dev 
+      - libelf-dev
+      - libssl-dev
+      - rustup
+      - clang
+      - lld
+      - llvm
+      - qemu-system-arm
     autoclean: yes
     update_cache: yes
     cache_valid_time: 86400 #One day
