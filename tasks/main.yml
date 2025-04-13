@@ -56,6 +56,14 @@
       - lld
       - llvm
       - qemu-system-arm
+      - bc 
+      - make 
+      - crossbuild-essential-armhf 
+      - crossbuild-essential-arm64
+      - pkg-config
+      - libtraceevent-dev
+      - libtracefs-dev 
+      - zlib1g-dev
     autoclean: yes
     update_cache: yes
     cache_valid_time: 86400 #One day
