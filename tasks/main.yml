@@ -64,6 +64,7 @@
       - libtraceevent-dev
       - libtracefs-dev 
       - zlib1g-dev
+      - pipx
     autoclean: yes
     update_cache: yes
     cache_valid_time: 86400 #One day
@@ -131,10 +132,6 @@
       - python3-pip
     autoclean: yes
   when: ansible_facts['os_family'] == "Debian"
-
-- name: Install bottle python pre-commit
-  ansible.builtin.pip:
-    name: pre-commit
 
 - name: Install NEOVIM
   snap:
