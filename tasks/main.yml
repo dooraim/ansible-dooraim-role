@@ -51,7 +51,6 @@
       - libncurses-dev 
       - libelf-dev
       - libssl-dev
-      - rustup
       - clang
       - lld
       - llvm
@@ -162,6 +161,14 @@
     path: "~{{ username }}/.fonts"
     mode: '0755'
     state: directory
+
+- name: Create nvim directory
+  become: true
+  become_user: "{{ username }}"
+  ansible.builtin.copy:
+    src: nvim
+    dest: "~{{ username }}/.config/"
+    mode: '0644'
 
 - name: Copy powerlevel10k recommanded fonts
   become: true
@@ -318,19 +325,3 @@
     dest: "~{{ username }}/.tmux.conf"
     backup: yes
     mode: "u=rw,go=rw"
-
-- name: Clone LazyVim starter
-  become: true
-  become_user: "{{ username }}"
-  git:
-    repo: https://github.com/dooraim/starter.git
-    dest: ~{{ username }}/.config/nvim
-    update: yes
-  ignore_errors: yes
-
-- name: Remove .git directory from ~/.config/nvim
-  become: true
-  become_user: "{{ username }}"
-  file:
-    path: ~{{ username }}/.config/nvim/.git
-    state: absent
