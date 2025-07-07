@@ -16,6 +16,7 @@
       - tree
       - rsync
       - iperf3
+      - npm
       - build-essential
       - autoconf
       - bison
@@ -48,16 +49,16 @@
       - samba
       - samba-common-bin
       - build-essential
-      - libncurses-dev 
+      - libncurses-dev
       - libelf-dev
       - libssl-dev
       - clang
       - lld
       - llvm
       - qemu-system-arm
-      - bc 
-      - make 
-      - crossbuild-essential-armhf 
+      - bc
+      - make
+      - crossbuild-essential-armhf
       - crossbuild-essential-arm64
       - pkg-config
       - pipx
