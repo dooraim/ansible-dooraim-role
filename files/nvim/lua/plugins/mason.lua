@@ -38,6 +38,7 @@ return {
         "prismals",
         "bash-language-server",
         "clangd",
+        "pyright",
       },
     })
 
@@ -51,3 +52,4 @@ return {
     })
   end,
 }
+
