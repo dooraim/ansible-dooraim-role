@@ -60,9 +60,6 @@
       - crossbuild-essential-armhf 
       - crossbuild-essential-arm64
       - pkg-config
-      - libtraceevent-dev
-      - libtracefs-dev 
-      - zlib1g-dev
       - pipx
       - luarocks
       - imagemagick
