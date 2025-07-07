@@ -64,3 +64,8 @@ p10k_prompt_flow: concise
 # Enable transient prompt
 # Valid values: yes, no
 p10k_transient_prompt: "no"
+
+nvm_version: "v0.40.3"
+node_version: "22"
+nvm_install_url: "https://raw.githubusercontent.com/nvm-sh/nvm/{{ nvm_version }}/install.sh"
+
